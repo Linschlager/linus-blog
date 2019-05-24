@@ -1,41 +1,45 @@
 import Link from 'next/link';
 import Router from 'next/router';
-import PropTypes from "prop-types";
-import { Menu, PageHeader } from "antd";
+import { Icon, Menu, Layout } from "antd";
+const { Sider } = Layout;
 
 const routes = {
   '/': {
     key: 'home',
-    label: 'Home'
+    label: 'Home',
+    icon: 'home'
   },
   '/about': {
     key: 'about',
-    label: 'About'
+    label: 'About me',
+    icon: 'info'
   }
 };
 
 const Header = () => {
-  const [path, setPath] = React.useState('/');
+  const [selected, setSelected] = React.useState('/');
   React.useEffect(() => {
-    const route = Router.router;
-    console.log(route.pathname);
-    setPath(route.pathname);
-  }, [Router.router]);
+    setSelected(Router.router.pathname)
+  });
 
   return (
-    <>
-      <PageHeader title={routes[path].label} onBack={() => history.back()}/>
-      <Menu mode="horizontal" selectedKeys={[routes[path].key]} >
+    <Sider breakpoint="lg" collapsible>
+      <Menu theme="dark" defaultSelectedKeys={[routes[selected].key]} mode="inline">
         {
-          Object.entries(routes).map(([ href, { key, label} ]) => (
+          Object.entries(routes).map(([ href, { key, label, icon }]) => (
             <Menu.Item key={key}>
-              <Link href={href}><a>{label}</a></Link>
+              <Link href={href}>
+                <a>
+                  <Icon type={icon}/>
+                  <span>{label}</span>
+                </a>
+              </Link>
             </Menu.Item>
           ))
         }
       </Menu>
-    </>
+    </Sider>
   );
-};
+}
 
 export default Header;
