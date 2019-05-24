@@ -1,1 +1,8 @@
-{}
+{
+  "version": 2,
+  "name": "linus-blog",
+  "builds": [
+    { "src": "next.config.js", "use": "@now/next" },
+    { "src": "*.js", "use": "@now/node" }
+  ]
+}

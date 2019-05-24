@@ -1,0 +1,24 @@
+{
+  "name": "linus-blog",
+  "version": "1.0.0",
+  "description": "another take on a personal blog",
+  "main": "pages/index.js",
+  "repository": "https://github.com/Linschlager/linus-blog.git",
+  "author": "Linus Vettiger",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "now-build": "next build"
+  },
+  "dependencies": {
+    "express": "^4.17.0",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "prop-types": "^15.7.2"
+  }
+}
