@@ -1,4 +1,4 @@
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout } from 'antd';
 
 const { Content, Footer } = Layout;
 
@@ -11,9 +11,6 @@ export default ({ children }) => (
     <Header />
     <Layout>
       <Content style={{ margin: '0 16px' }}>
-        <Breadcrumb >
-          <Breadcrumb.Item />
-        </Breadcrumb>
         <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
           {children}
         </div>

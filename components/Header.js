@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Router from 'next/router';
 import { Icon, Menu, Layout } from "antd";
+import { useRouter } from "next/router";
 const { Sider } = Layout;
 
 const routes = {
@@ -17,28 +17,24 @@ const routes = {
 };
 
 const Header = () => {
-  const [selected, setSelected] = React.useState('/');
-  React.useEffect(() => {
-    setSelected(Router.router.pathname)
-  });
-
+  const route = useRouter();
   return (
-    <Sider breakpoint="lg" collapsible>
-      <Menu theme="dark" defaultSelectedKeys={[routes[selected].key]} mode="inline">
-        {
-          Object.entries(routes).map(([ href, { key, label, icon }]) => (
-            <Menu.Item key={key}>
-              <Link href={href}>
-                <a>
-                  <Icon type={icon}/>
-                  <span>{label}</span>
-                </a>
-              </Link>
-            </Menu.Item>
-          ))
-        }
-      </Menu>
-    </Sider>
+   <Sider breakpoint="lg" collapsible>
+     <Menu theme="dark" selectedKeys={[routes[route.pathname].key]} mode="inline">
+       {
+         Object.entries(routes).map(([ href, { key, label, icon }]) => (
+          <Menu.Item key={key}>
+            <Link href={href}>
+              <a>
+                <Icon type={icon}/>
+                <span>{label}</span>
+              </a>
+            </Link>
+          </Menu.Item>
+         ))
+       }
+     </Menu>
+   </Sider>
   );
 }
 
