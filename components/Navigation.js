@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Icon, Menu, Layout } from "antd";
 import { useRouter } from "next/router";
-import {mapByPath} from "../static/routing";
+import {mapByPath} from "../helper/routing";
 const { Sider } = Layout;
 
 const routes = mapByPath();

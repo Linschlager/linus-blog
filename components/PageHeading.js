@@ -2,7 +2,7 @@
 import {PageHeader} from "antd";
 import PropTypes from 'prop-types';
 import {useRouter} from "next/router";
-import { byPath } from '../static/routing';
+import { byPath } from '../helper/routing';
 
 const PageHeading = () => {
   const router = useRouter();

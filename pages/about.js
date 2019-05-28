@@ -1,12 +1,12 @@
-import Layout from "../components/Layout";
+import React from 'react';
+
 
 const About = () => {
-
   return (
-    <Layout>
-      Hello, World!
-      This is Linus
-    </Layout>
+     <>
+        Hello, World!
+        This is Linus
+     </>
   );
 };
 
