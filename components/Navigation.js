@@ -1,20 +1,10 @@
 import Link from 'next/link';
 import { Icon, Menu, Layout } from "antd";
 import { useRouter } from "next/router";
+import {mapByPath} from "../static/routing";
 const { Sider } = Layout;
 
-const routes = {
-  '/': {
-    key: 'home',
-    label: 'Home',
-    icon: 'home'
-  },
-  '/about': {
-    key: 'about',
-    label: 'About me',
-    icon: 'info'
-  }
-};
+const routes = mapByPath();
 
 const Navigation = () => {
   const route = useRouter();
