@@ -8,9 +8,13 @@ const routes = mapByPath();
 
 const Navigation = () => {
   const route = useRouter();
+  let currentRoute = routes[route.pathname];
+  if (currentRoute === undefined) {
+    currentRoute = routes['/'];
+  }
   return (
    <Sider breakpoint="lg" collapsible>
-     <Menu theme="dark" selectedKeys={[routes[route.pathname].key]} mode="inline">
+     <Menu theme="dark" selectedKeys={[currentRoute.key]} mode="inline">
        {
          Object.entries(routes).map(([ href, { key, label, icon }]) => (
           <Menu.Item key={key}>

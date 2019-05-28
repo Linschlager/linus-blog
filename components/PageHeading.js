@@ -11,7 +11,7 @@ const PageHeading = () => {
     setPath(byPath(router.pathname));
   }, [router.pathname]);
   return (
-   <PageHeader title={path.title} onBack={() => window.history.back()} />
+   <PageHeader title={path ? path.title : router.asPath} onBack={() => window.history.back()} />
   );
 };
 
