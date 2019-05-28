@@ -2,6 +2,23 @@
   "version": 2,
   "name": "linus-blog",
   "builds": [
-    { "src": "next.config.js", "use": "@now/next" }
+    {
+      "src": "next.config.js",
+      "use": "@now/next"
+    },
+    {
+      "src": "api",
+      "use": "@next/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/graphql(.*)",
+      "dest": "api/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "next.config.js"
+    }
   ]
 }
