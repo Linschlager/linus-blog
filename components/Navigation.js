@@ -16,7 +16,7 @@ const routes = {
   }
 };
 
-const Header = () => {
+const Navigation = () => {
   const route = useRouter();
   return (
    <Sider breakpoint="lg" collapsible>
@@ -38,4 +38,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export default Navigation;
