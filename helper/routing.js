@@ -12,6 +12,13 @@ const routes = [
     key: 'about',
     label: 'About',
     title: 'Something about me',
+  },
+  {
+    path: '/blog',
+    icon: 'edit',
+    key: 'blog',
+    label: 'Blog',
+    title: 'Some things I found interesting'
   }
 ];
 
