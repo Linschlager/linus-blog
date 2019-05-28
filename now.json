@@ -8,7 +8,7 @@
     },
     {
       "src": "api/index.js",
-      "use": "@next/node"
+      "use": "@now/node"
     }
   ],
   "routes": [
