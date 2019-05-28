@@ -5,17 +5,9 @@
     {
       "src": "next.config.js",
       "use": "@now/next"
-    },
-    {
-      "src": "api/index.js",
-      "use": "@now/node"
     }
   ],
   "routes": [
-    {
-      "src": "/graphql(.*)",
-      "dest": "api/index.js"
-    },
     {
       "src": "/(.*)",
       "dest": "next.config.js"
