@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: '/about',
-    icon: 'info',
+    icon: 'user',
     key: 'about',
     label: 'About',
     title: 'Something about me',
