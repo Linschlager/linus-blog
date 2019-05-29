@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Link from 'next/link';
-import { Icon } from "antd";
 
 const tech = [
   [
@@ -36,10 +35,10 @@ const About = () => (
     <ul>
       {
         tech.map(group => (
-          <li>
+          <li key={group}>
             {
               group.map((item, index) => (
-                <>{ index > 0 && ', ' }<a target="_blank" rel="noreferrer" href={ item.url }>{ item.name }</a></>
+                <Fragment key={index}>{ index > 0 && ', ' }<a target="_blank" rel="noreferrer" href={ item.url }>{ item.name }</a></Fragment>
               ))
             }
           </li>
@@ -49,11 +48,8 @@ const About = () => (
 
     <p>Find me on:</p>
     <ul>
-      <li><Link href="https://github.com/Linschlager"><a target="_blank" rel="noreferrer"><Icon
-        type="github"/>&nbsp;Github</a></Link></li>
-      <li><Link href="https://stackoverflow.com/users/5228642"><a target="_blank" rel="noreferrer"><img
-        alt="StackOverflow icon" src="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico"
-        height={ 14 }/>&nbsp;StackOverflow</a></Link></li>
+      <li><Link href="https://github.com/Linschlager"><a target="_blank" rel="noreferrer">GitHub</a></Link></li>
+      <li><Link href="https://stackoverflow.com/users/5228642"><a target="_blank" rel="noreferrer">StackOverflow</a></Link></li>
     </ul>
   </>
 );

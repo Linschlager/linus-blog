@@ -4,6 +4,12 @@ export const posts = [
     title: 'Setting up a blog with NextJS',
     summary: 'Coming Soon™',
     listed: true,
+  },
+  {
+    slug: 'web-dark-mode',
+    title: 'Dark Mode on WebSites',
+    summary: 'Dark Mode Setting is passed through the browser to CSS',
+    listed: true
   }
 ];
 

@@ -1,0 +1,71 @@
+:root {
+  --linus-primary-color: 0, 0, 128;
+  --linus-background-color: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --linus-primary-color: 200, 200, 200;
+    --linus-background-color: 0, 0, 0;
+  }
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  background-color: rgb(var(--linus-background-color));
+  color: rgb(var(--linus-primary-color));
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Raleway', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 20px 250px;
+}
+@media screen and (max-width: 63.99em) {
+  body {
+    padding: 5px;
+  }
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid rgb(var(--linus-primary-color));
+  padding-top: 10px;
+}
+
+ul {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+img {
+  opacity: 0.5;
+}
+
+a, a:link, a:focus, a:visited {
+  color: rgb(var(--linus-primary-color));
+}
+
+a:hover {
+  color: rgba(var(--linus-primary-color), 0.8);
+}

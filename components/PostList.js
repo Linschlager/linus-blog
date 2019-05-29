@@ -1,22 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { posts } from "../helper/posts";
-import { List } from "antd";
 
-const PostList = () =>(
-  <List
-    itemLayout="horizontal"
-    dataSource={posts}
-    renderItem={post => (
-      <List.Item>
-        <List.Item.Meta
-          title={<Link href={`/blog?p=${post.slug}`}><a>{post.title}</a></Link>}
-          description={post.summary}
-        />
-      </List.Item>
-    )}
-  >
-  </List>
+const PostList = () => (
+  <ul>
+    {
+      posts.map(post => (
+        <li>
+          <Link href={`/blog?p=${post.slug}`}><a>{post.title}</a></Link> - <span>{post.summary}</span>
+        </li>
+      ))
+    }
+  </ul>
 );
 
 export default PostList;

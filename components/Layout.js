@@ -1,26 +1,26 @@
-import { Layout } from 'antd';
-const { Content, Footer } = Layout;
-
-import PageHeading from "./PageHeading";
-import Navigation from './Navigation';
+import Navigation from '../design/Navigation';
+import Page from '../design/Page';
 
 // Ant Design Stylesheet
-import 'antd/dist/antd.css';
+import { mapByPath } from '../helper/routing';
+import { useRouter } from 'next/router';
 
 export default ({ children }) => {
   const year = (new Date()).getFullYear();
+  const router = useRouter();
   return (
-   <Layout style={{ minHeight: '100vh' }}>
-     <Navigation />
-     <Layout>
-       <PageHeading />
-       <Content style={{ margin: '0 16px' }}>
-         <div style={{ padding: 24, background: '#fff', minHeight: '100%' }}>
-           {children}
-         </div>
-       </Content>
-       <Footer style={{ textAlign: 'center' }}>&copy;&nbsp;{year} Linus&nbsp;Vettiger</Footer>
-     </Layout>
-   </Layout>
+    <Page>
+      <Navigation links={mapByPath()} activeRoute={router.pathname}/>
+      <section>
+      { children }
+      </section>
+      <footer>&copy;&nbsp;{year} Linus&nbsp;Vettiger</footer>
+      <style jsx>{`
+        section {
+          /* Hide Footer just outside the view*/
+          min-height: calc(100vh - 130px);
+        }
+      `}</style>
+    </Page>
   );
 }
