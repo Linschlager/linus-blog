@@ -14,11 +14,19 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.18.2",
+    "apollo-cache-inmemory": "^1.6.1",
+    "apollo-client": "^2.6.1",
+    "apollo-link-http": "^1.5.14",
+    "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
+    "isomorphic-fetch": "^2.2.1",
     "next": "^8.1.0",
     "raw-loader": "^2.0.0",
     "react": "^16.8.6",
+    "react-apollo": "^2.5.6",
     "react-dom": "^16.8.6",
-    "react-markdown": "^4.0.8"
+    "react-markdown": "^4.0.8",
+    "webpack": "^4.33.0"
   },
   "devDependencies": {
     "prop-types": "^15.7.2"
