@@ -28,7 +28,7 @@ class DocumentWrapper extends Document {
           <link href="https://fonts.googleapis.com/css?family=Raleway:100|Roboto&display=swap" rel="stylesheet" />
           { isProduction && (
             <>
-              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141582672-1"></script>
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141582672-1"/>
               <script dangerouslySetInnerHTML={DocumentWrapper.setGoogleTags()}/>
             </>
           ) }

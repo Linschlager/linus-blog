@@ -1,6 +1,7 @@
 import React from 'react'
 import Router from 'next/router';
 import App, { Container } from 'next/app'
+import Head from 'next/head';
 import { ApolloProvider } from "react-apollo";
 import Layout from "../components/Layout";
 import initApollo from "../lib/initApollo";
@@ -30,6 +31,9 @@ class AppWrapper extends App {
     const apolloClient = initApollo();
     return (
      <Container>
+       <Head>
+         <title>Linus Vettiger</title>
+       </Head>
        <ApolloProvider client={apolloClient}>
          <Layout>
           <Component {...pageProps} />

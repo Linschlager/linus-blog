@@ -14,7 +14,7 @@ const postQuery = gql`
 `;
 const BlogPost = () => {
   return (
-    <Query query={postQuery} ssr>
+    <Query query={postQuery}>
     { ({ loading, error, data }) => {
       if (loading) return 'Loading...';
       if (error) return `Error: ${error.message}`;
@@ -23,26 +23,27 @@ const BlogPost = () => {
       const byYear = {};
       data.posts.forEach(post => {
         const y = new Date(post.date).getFullYear();
-        years.push(y);
-        if (!byYear[y]) byYear[y] = [];
+        if (!byYear[y]) {
+          byYear[y] = [];
+          years.push(y);
+        }
         byYear[y].push(post);
       });
-
 
       return (
         <>
           {
             years.map(year => (
-              <>
-              <h2>{ year }</h2>
-                <ul>
+              <div className="card-block">
+                <h2 className="card-header">{ year }</h2>
+                <ul className="card-items">
                   {
                     byYear[year].map(post => (
-                      <li key={post.slug}><Link href={`/post?slug=${post.slug}`}><a>{post.title}</a></Link></li>
+                      <Link key={post.slug} href={`/post?slug=${post.slug}`}><a><li className="card-item">{post.title}</li></a></Link>
                     ))
                   }
                 </ul>
-              </>
+              </div>
             ))
           }
         </>
