@@ -1,6 +1,11 @@
 import React from 'react'
+import Router from 'next/router';
 import App, { Container } from 'next/app'
+import Head from 'next/head';
+import { ApolloProvider } from "react-apollo";
 import Layout from "../components/Layout";
+import initApollo from "../lib/initApollo";
+import { trackPage } from "../lib/trackUsage";
 
 class AppWrapper extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -13,18 +18,27 @@ class AppWrapper extends App {
     return { pageProps }
   }
 
+  componentDidMount() {
+    Router.onRouteChangeComplete = trackPage;
+  }
+
   constructor(...args) {
     super(...args);
   }
 
   render() {
     const { Component, pageProps } = this.props;
-
+    const apolloClient = initApollo();
     return (
      <Container>
-       <Layout>
-        <Component {...pageProps} />
-       </Layout>
+       <Head>
+         <title>Linus Vettiger</title>
+       </Head>
+       <ApolloProvider client={apolloClient}>
+         <Layout>
+          <Component {...pageProps} />
+         </Layout>
+       </ApolloProvider>
      </Container>
     )
   }
