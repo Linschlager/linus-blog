@@ -1,14 +1,14 @@
 import React from 'react';
 import Markdown from 'react-markdown';
-import { graphql, Query } from "react-apollo";
+import {  Query } from "react-apollo";
 import gql from "graphql-tag";
 
 const Post = ({ slug }) => {
   console.log("Accessing '"+slug+"'");
   const postQuery = gql`
     {
-      Post(slug: "${slug}") {
-        title
+      post(slug: "${slug}") {
+        content
       }
     }
   `;
@@ -18,9 +18,9 @@ const Post = ({ slug }) => {
         if (loading) return 'Loading...';
         if (error) return `Error: ${error.message}`;
         return (
-          <pre>
-            { JSON.stringify(data) }
-          </pre>
+          <Markdown>
+            { data.post.content }
+          </Markdown>
         );
       } }
     </Query>
