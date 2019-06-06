@@ -4,7 +4,6 @@ import {  Query } from "react-apollo";
 import gql from "graphql-tag";
 
 const Post = ({ slug }) => {
-  console.log("Accessing '"+slug+"'");
   const postQuery = gql`
     {
       post(slug: "${slug}") {
