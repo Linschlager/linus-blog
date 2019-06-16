@@ -2,17 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-const Navigation = ({ links, activeRoute }) => {
+const links = [
+  { label: 'Blog', href: '/blog' },
+  { label: 'About me', href: '/about' },
+  { label: 'Customization', href: '/customization' }
+];
+
+const Navigation = ({ activeRoute }) => {
   return (
     <>
-      <div>
+      <ul>
         {
-          Object.entries(links).map(([ href, { key, label }]) => (
-            <Link key={key} href={href} prefetch><a className={activeRoute === href && 'active'}>{label}</a></Link>
+          links.map(link => (
+            <li>
+              <Link href={link.href}>
+                <a className={activeRoute === link.href && `active`}>{link.label}</a>
+              </Link>
+            </li>
           ))
         }
-      </div>
+      </ul>
       <style jsx>{`
+        ul {
+          list-style: none;
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          border-bottom: 1px solid rgb(var(--linus-primary-color));
+        }
+        
+        li {
+          padding-bottom: 15px;
+        }
+        
         div {
           background-color: rgba(var(--linus-primary-color), 0.2);
           position: relative;

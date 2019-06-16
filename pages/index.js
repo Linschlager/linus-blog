@@ -1,14 +1,16 @@
-import React from 'react';
+import Router from 'next/router';
+const Index = () => {};
 
-const Landing = () => {
-  return (
-    <>
-      <h1>Hello to my world!</h1>
-      <p>This page is currently under construction!</p>
-      <img src="/static/construction.jpg" alt="construction site" width={"100%"}/>
-    </>
-  );
+Index.getInitialProps = async ({ res }) => {
+  if (res) {
+    res.writeHead(302, {
+      Location: '/blog',
+    });
+    res.end();
+  } else {
+    await Router.push('/blog');
+  }
+  return {};
 };
 
-export default Landing;
-
+export default Index;

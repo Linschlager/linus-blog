@@ -1,18 +1,16 @@
-import Navigation from '../design/Navigation';
-import Page from '../design/Page';
-
-// Ant Design Stylesheet
-import { mapByPath } from '../helper/routing';
 import { useRouter } from 'next/router';
+
+import Navigation from './Navigation';
+import Page from './Page';
 
 export default ({ children }) => {
   const year = (new Date()).getFullYear();
   const router = useRouter();
   return (
     <Page>
-      <Navigation links={mapByPath()} activeRoute={router.pathname}/>
+      <Navigation activeRoute={router.pathname}/>
       <section>
-      { children }
+        { children }
       </section>
       <footer>&copy;&nbsp;{year} Linus&nbsp;Vettiger</footer>
       <style jsx>{`
