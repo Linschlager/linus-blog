@@ -1,10 +1,11 @@
+import Welcome from "../components/Welcome";
+import Blog from "../components/Blog";
+
 const Index = () => {
   return (
     <article>
-      <div>
-        <h3>Hello, I'm Linus</h3>
-        <p>Always trying to help and strive to improve</p>
-      </div>
+      <Welcome/>
+      <Blog />
     </article>
   );
 };
