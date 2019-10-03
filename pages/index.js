@@ -1,14 +1,13 @@
-import React from 'react';
+import Welcome from "../components/Welcome";
+import Blog from "../components/Blog";
 
-const Landing = () => {
+const Index = () => {
   return (
-    <>
-      <h1>Hello to my world!</h1>
-      <p>This page is currently under construction!</p>
-      <img src="/static/construction.jpg" alt="construction site" width={"100%"}/>
-    </>
+    <article>
+      <Welcome/>
+      <Blog />
+    </article>
   );
 };
 
-export default Landing;
-
+export default Index;

@@ -1,12 +1,11 @@
 :root {
-  --linus-primary-color: 0, 0, 128;
-  --linus-background-color: 255, 255, 255;
+  --linus-primary-color: 200, 200, 200;
+  --linus-background-color: 0, 0, 0;
 }
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --linus-primary-color: 200, 200, 200;
-    --linus-background-color: 0, 0, 0;
+    --linus-primary-color: 0, 0, 128;
+    --linus-background-color: 255, 255, 255;
   }
 }
 
@@ -16,35 +15,35 @@ body {
   font-size: 1.2rem;
   background-color: rgb(var(--linus-background-color));
   color: rgb(var(--linus-primary-color));
+
+  margin: 0;
+  padding: 100px 35%;
+}
+
+@media screen and (max-width: 63.99em) {
+  body {
+    padding: 20px 20px;
+  }
 }
 
 h1 {
-  font-size: 3.5rem;
-}
-
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
   font-size: 2rem;
 }
 
-h4 {
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
   font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 h1, h2, h3, h4 {
   font-family: 'Raleway', sans-serif;
-}
-body {
-  margin: 0;
-  padding: 20px 250px;
-}
-@media screen and (max-width: 63.99em) {
-  body {
-    padding: 5px;
-  }
 }
 
 footer {
@@ -68,20 +67,4 @@ a, a:link, a:focus, a:visited {
 
 a:hover {
   color: rgba(var(--linus-primary-color), 0.8);
-}
-
-.card-header {
-  margin-bottom: 0;
-  padding: 20px;
-  border: 1px solid rgb(var(--linus-primary-color));
-}
-
-ul.card-items {
-  list-style: none;
-  margin-top: 0;
-}
-
-li.card-item {
-  border: 1px solid rgb(var(--linus-primary-color));
-  padding: 20px;
 }

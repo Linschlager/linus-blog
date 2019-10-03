@@ -1,17 +1,5 @@
 {
   "version": 2,
   "name": "linus-blog",
-  "alias": "linusvettiger.dev",
-  "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@now/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "next.config.js"
-    }
-  ]
+  "alias": "linusvettiger.dev"
 }
