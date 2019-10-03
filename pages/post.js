@@ -1,28 +1,23 @@
 import React from 'react';
 import Markdown from 'react-markdown';
-import {  Query } from "react-apollo";
 import gql from "graphql-tag";
+import { useQuery } from "react-apollo-hooks";
 
-const Post = ({ slug }) => {
-  const postQuery = gql`
-    {
-      post(slug: "${slug}") {
-        content
-      }
+const GET_POST = (slug) => gql`
+  {
+    post(slug: "${slug}") {
+      content
     }
-  `;
+  }
+`;
+const Post = ({ slug }) => {
+  const { data, error, loading } = useQuery(GET_POST(slug));
+  if (loading) return 'Loading...';
+  if (error) return `Error: ${error.message}`;
   return (
-    <Query query={postQuery}>
-      { ({ loading, error, data }) => {
-        if (loading) return 'Loading...';
-        if (error) return `Error: ${error.message}`;
-        return (
-          <Markdown>
-            { data.post.content }
-          </Markdown>
-        );
-      } }
-    </Query>
+    <Markdown>
+      { data.post.content }
+    </Markdown>
   );
 };
 

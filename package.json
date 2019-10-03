@@ -28,6 +28,7 @@
     "raw-loader": "^2.0.0",
     "react": "^16.8.6",
     "react-apollo": "^2.5.6",
+    "react-apollo-hooks": "^0.5.0",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.0.8",
     "webpack": "^4.33.0"
