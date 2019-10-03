@@ -24,6 +24,7 @@ class DocumentWrapper extends Document {
     return (
       <Html lang="en">
         <Head title={"Linus"}>
+          <meta name="theme-color" content="#000000" />
           <link rel="manifest" href="/static/manifest.json" />
           <link href="https://fonts.googleapis.com/css?family=Raleway:100|Roboto&display=swap" rel="stylesheet" />
           { isProduction && (
