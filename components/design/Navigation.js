@@ -57,7 +57,7 @@ const Navigation = () => {
         {
           links.map(link => (
             <li>
-              <NavigationLink {...link} />
+              <NavigationLink {...link} key={`ext-${link.title}`}/>
             </li>
           ))
         }
