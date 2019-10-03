@@ -43,7 +43,7 @@ const NavigationLink = ({ local, link, title, icon }) => {
     );
   } else {
     return (
-      <a href={ link } title={ title } target="_blank">
+      <a href={ link } title={ title } target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={ icon } size="4x"/>
       </a>
     );
