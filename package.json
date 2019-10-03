@@ -18,17 +18,18 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.5",
     "@zeit/next-css": "^1.0.1",
-    "apollo-cache-inmemory": "^1.6.1",
-    "apollo-client": "^2.6.1",
-    "apollo-link-http": "^1.5.14",
-    "graphql": "^14.3.1",
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "apollo-link-http": "^1.5.16",
+    "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
-    "next": "^8.1.0",
-    "raw-loader": "^2.0.0",
-    "react": "^16.8.6",
+    "next": "^9.0.7",
+    "raw-loader": "^3.1.0",
+    "react": "^16.10.1",
     "react-apollo-hooks": "^0.5.0",
-    "react-dom": "^16.8.6",
-    "react-markdown": "^4.0.8"
+    "react-dom": "^16.10.1",
+    "react-markdown": "^4.2.2",
+    "webpack": "^4.4.0"
   },
   "devDependencies": {
     "prop-types": "^15.7.2"
