@@ -3,7 +3,7 @@ import Router from 'next/router';
 import App, { Container } from 'next/app'
 import Head from 'next/head';
 import { ApolloProvider } from "react-apollo";
-import Layout from "../components/Layout";
+import Layout from "../components/design/Layout";
 import initApollo from "../lib/initApollo";
 import { trackPage } from "../lib/trackUsage";
 

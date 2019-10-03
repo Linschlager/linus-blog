@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../assets/css/globals.css';
+import '../../assets/css/globals.css';
 
 const Page = ({ children }) => {
   return children;

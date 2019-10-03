@@ -1,14 +1,12 @@
-import React from 'react';
-
-const Landing = () => {
+const Index = () => {
   return (
-    <>
-      <h1>Hello to my world!</h1>
-      <p>This page is currently under construction!</p>
-      <img src="/static/construction.jpg" alt="construction site" width={"100%"}/>
-    </>
+    <article>
+      <div>
+        <h3>Hello, I'm Linus</h3>
+        <p>Always trying to help and strive to improve</p>
+      </div>
+    </article>
   );
 };
 
-export default Landing;
-
+export default Index;
