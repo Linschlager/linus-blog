@@ -9,7 +9,8 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "now-build": "next build"
+    "now-build": "next build",
+    "build": "next build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
