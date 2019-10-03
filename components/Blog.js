@@ -25,7 +25,7 @@ const Blog = () => {
     <ul>
       {
         data.posts.map(post => (
-          <Link key={post.slug} href={`/post/${post.slug}`}><a><li className="card-item">{post.title}</li></a></Link>
+          <Link key={post.slug} href={`/post/${post.slug}`} prefetch><a><li className="card-item">{post.title}</li></a></Link>
         ))
       }
       <style jsx>{`

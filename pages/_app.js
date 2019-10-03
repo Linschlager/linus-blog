@@ -8,24 +8,6 @@ import initApollo from "../lib/initApollo";
 import { trackPage } from "../lib/trackUsage";
 
 class AppWrapper extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-
-    return { pageProps }
-  }
-
-  componentDidMount() {
-    Router.onRouteChangeComplete = trackPage;
-  }
-
-  constructor(...args) {
-    super(...args);
-  }
-
   render() {
     const { Component, pageProps } = this.props;
     const apolloClient = initApollo();
