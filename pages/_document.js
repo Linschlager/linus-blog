@@ -25,6 +25,7 @@ class DocumentWrapper extends Document {
       <Html lang="en">
         <Head title={"Linus"}>
           <meta name="theme-color" content="#000000" />
+          <meta name="description" content="Personal web presence by Linus Vettiger" />
           <link rel="icon" type="image/png" href="/static/L_192x192.png" />
           <link rel="manifest" href="/static/manifest.json" />
           <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
