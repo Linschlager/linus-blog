@@ -1,14 +1,14 @@
-import React from 'react';
+import React  from 'react';
 import Markdown from 'react-markdown';
 import gql from "graphql-tag";
 import { useQuery } from "react-apollo-hooks";
 
 const GET_POST = (slug) => gql`
-  {
-    post(slug: "${slug}") {
-      content
+    {
+        post(slug: "${slug}") {
+            content
+        }
     }
-  }
 `;
 const Post = ({ slug }) => {
   const { data, error, loading } = useQuery(GET_POST(slug));
