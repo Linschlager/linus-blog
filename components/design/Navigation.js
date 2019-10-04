@@ -36,14 +36,14 @@ const NavigationLink = ({ local, link, title, icon }) => {
   if (local) { // Wrap in <Link> if local
     return (
       <Link href={link}>
-        <a href={link} title={title}>
+        <a title={title}>
           <FontAwesomeIcon icon={icon } size="4x"/>
         </a>
       </Link>
     );
   } else {
     return (
-      <a href={ link } title={ title } target="_blank">
+      <a href={ link } title={ title } target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={ icon } size="4x"/>
       </a>
     );
@@ -56,8 +56,8 @@ const Navigation = () => {
       <ul>
         {
           links.map(link => (
-            <li>
-              <NavigationLink {...link} />
+            <li key={`ext-${link.title}`}>
+              <NavigationLink {...link}/>
             </li>
           ))
         }

@@ -22,10 +22,13 @@ class DocumentWrapper extends Document {
   render() {
     const { isProduction } = this.props;
     return (
-      <Html>
+      <Html lang="en">
         <Head title={"Linus"}>
+          <meta name="theme-color" content="#000000" />
+          <meta name="description" content="Personal web presence by Linus Vettiger" />
+          <link rel="icon" type="image/png" href="/static/L_192x192.png" />
           <link rel="manifest" href="/static/manifest.json" />
-          <link href="https://fonts.googleapis.com/css?family=Raleway:100|Roboto&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
           { isProduction && (
             <>
               <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141582672-1"/>
