@@ -1,6 +1,6 @@
 {
   "name": "linus-blog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "another take on a personal blog",
   "main": "pages/index.js",
   "repository": "https://github.com/Linschlager/linus-blog.git",
